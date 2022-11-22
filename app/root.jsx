@@ -1,31 +1,18 @@
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
-
-export const meta = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
-});
-
 export default function App() {
   return (
-    <html lang="en">
+    <Document>
+      <h1>Hola mundo</h1>
+    </Document>
+  );
+}
+
+function Document({ children }) {
+  return (
+    <html lang="es">
       <head>
-        <Meta />
-        <Links />
+        <title>GuitarLA - Remix</title>
       </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
