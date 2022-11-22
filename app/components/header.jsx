@@ -4,7 +4,7 @@ import logo from "../../public/img/logo.svg";
 const Header = () => {
   return (
     <header className="header">
-      <div className="container">
+      <div className="container container-header">
         <Link to="/">
           <img className="logo" src={logo} alt="app logo" />
         </Link>
