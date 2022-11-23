@@ -1,8 +1,30 @@
 import image from "../../public/img/aboutus.jpg";
+import styles from "~/styles/aboutus.css";
+
+export function meta() {
+  return {
+    title: "GuitarLA - About Us",
+    description: "Guitar sales, music blog",
+  };
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: styles,
+    },
+    {
+      rel: "preload",
+      href: image,
+      as: "image",
+    },
+  ];
+}
 
 const Aboutus = () => {
   return (
-    <main className="container">
+    <main className="container aboutus">
       <h2 className="heading">About Us</h2>
 
       <div className="content">
