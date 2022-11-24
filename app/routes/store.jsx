@@ -1,6 +1,23 @@
 import { useLoaderData } from "@remix-run/react";
 import { getGuitars } from "~/models/guitars.server";
 import Guitar from "~/components/guitar";
+import styles from "~/styles/guitars.css";
+
+export function meta() {
+  return {
+    title: "GuitarLA - Guitar Store",
+    description:"GuitarLA - Our guitar collection" 
+  };
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: styles,
+    },
+  ];
+}
 
 export async function loader() {
   const guitars = await getGuitars();
@@ -12,7 +29,7 @@ const Store = () => {
 
   return (
     <main className="container">
-      <h2 className="heading">Our colletion</h2>
+      <h2 className="heading">Our Colletion</h2>
 
       {guitars?.length && (
         <div className="guitars-grid">
