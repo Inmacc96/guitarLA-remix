@@ -18,6 +18,11 @@
 }
 
 /* ---- POST ---- */
+.post {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
 .post .content {
   padding: 1.5rem;
 }
@@ -28,9 +33,9 @@
   margin: 0;
 }
 
-.post .date{
-font-size: 1.8rem;
-color: var(--primary)
+.post .date {
+  font-size: 1.8rem;
+  color: var(--primary);
 }
 
 .post .summary {
@@ -38,4 +43,12 @@ color: var(--primary)
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
+}
+
+.post .text {
+  white-space: pre-wrap;
+}
+
+.mt-3 {
+  margin-top: 3rem;
 }
