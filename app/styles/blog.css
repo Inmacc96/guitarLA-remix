@@ -18,9 +18,6 @@
 }
 
 /* ---- POST ---- */
-.post {
-}
-
 .post .content {
   padding: 1.5rem;
 }
@@ -29,6 +26,11 @@
   font-weight: 900;
   font-size: 2.8rem;
   margin: 0;
+}
+
+.post .date{
+font-size: 1.8rem;
+color: var(--primary)
 }
 
 .post .summary {

@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { formatDate } from "~/utils/helpers";
 
 const Post = ({ post }) => {
   const { title, content, image, url, publishedAt } = post;
@@ -11,7 +12,7 @@ const Post = ({ post }) => {
       />
       <div className="content">
         <h3>{title}</h3>
-        <p className="date">{publishedAt}</p>
+        <p className="date">{formatDate(publishedAt)}</p>
         <p className="summary">{content}</p>
         <Link className="link" to={`/posts/${url}`}>
           Read Post
