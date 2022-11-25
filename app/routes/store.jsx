@@ -1,12 +1,12 @@
 import { useLoaderData } from "@remix-run/react";
 import { getGuitars } from "~/models/guitars.server";
-import Guitar from "~/components/guitar";
+import GuitarsList from "~/components/guitarsList";
 import styles from "~/styles/guitars.css";
 
 export function meta() {
   return {
     title: "GuitarLA - Guitar Store",
-    description:"GuitarLA - Our guitar collection" 
+    description: "GuitarLA - Our guitar collection",
   };
 }
 
@@ -29,15 +29,7 @@ const Store = () => {
 
   return (
     <main className="container">
-      <h2 className="heading">Our Colletion</h2>
-
-      {guitars?.length && (
-        <div className="guitars-grid">
-          {guitars.map((guitar) => (
-            <Guitar key={guitar?.id} guitar={guitar?.attributes} />
-          ))}
-        </div>
-      )}
+      <GuitarsList guitars={guitars} />
     </main>
   );
 };
