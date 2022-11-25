@@ -22,7 +22,7 @@ export function meta({ data }) {
     };
   }
   return {
-    title: `Guitar LA - ${data.data[0].attributes.name}`,
+    title: `GuitarLA - ${data.data[0].attributes.name}`,
     description: `Guitars, sale of guitars, ${data.data[0].attributes.name} guitar`,
   };
 }
