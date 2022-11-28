@@ -33,6 +33,25 @@ const Guitar = () => {
 
   const { name, description, image, price } = guitar.data[0].attributes;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (quantity < 1) {
+      alert("You have to select a quantity");
+      return;
+    }
+
+    const selectedGuitar = {
+      id: guitar.data[0].id,
+      image: image.data.attributes.url,
+      name,
+      price,
+      quantity,
+    };
+
+    console.log(selectedGuitar);
+  };
+
   return (
     <div className="guitar">
       <img
@@ -46,11 +65,11 @@ const Guitar = () => {
         <p className="text-description">{description}</p>
         <p className="price">${price}</p>
 
-        <form className="form">
+        <form onSubmit={handleSubmit} className="form">
           <label htmlFor="quantity">Quantity</label>
 
           <select id="quantity" onChange={(e) => setQuantity(+e.target.value)}>
-            <option value="">-- Select --</option>
+            <option value="0">-- Select --</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
