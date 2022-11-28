@@ -26,6 +26,16 @@
   border-bottom: none;
 }
 
+.product .select-quantity {
+  all: unset;
+  border: 1px solid #cfcfcf;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
 .product p {
   margin: 0 0 1rem 0;
 }
