@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Meta,
   Links,
@@ -46,9 +47,15 @@ export function links() {
 }
 
 export default function App() {
+  const [cart, setCart] = useState([]);
+
+  const addCart = (guitar) => {
+    setCart([...cart, guitar]);
+  };
+
   return (
     <Document>
-      <Outlet />
+      <Outlet context={{ addCart }} />
     </Document>
   );
 }
