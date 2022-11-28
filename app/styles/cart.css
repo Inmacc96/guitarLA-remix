@@ -20,6 +20,7 @@
   align-items: center;
   padding: 3rem 0;
   border-bottom: 1px solid #cfcfcf;
+  position: relative;
 }
 
 .product:last-of-type {
@@ -65,4 +66,16 @@
   border-radius: 1rem;
   position: sticky;
   top: 3rem;
+}
+
+.btn-delete {
+  all: unset;
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+  font-weight: bold;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
 }

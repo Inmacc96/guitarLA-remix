@@ -19,7 +19,7 @@ export function links() {
 }
 
 const Cart = () => {
-  const { cart, updateQuantity } = useOutletContext();
+  const { cart, updateQuantity, deleteGuitar } = useOutletContext();
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -76,6 +76,14 @@ const Cart = () => {
                       <span>{product.price * product.quantity}</span>
                     </p>
                   </div>
+
+                  <button
+                    type="button"
+                    className="btn-delete"
+                    onClick={() => deleteGuitar(product.id)}
+                  >
+                    X
+                  </button>
                 </div>
               ))}
         </div>
