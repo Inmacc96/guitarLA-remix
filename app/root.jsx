@@ -69,7 +69,7 @@ export default function App() {
 
   return (
     <Document>
-      <Outlet context={{ addCart }} />
+      <Outlet context={{ cart, addCart }} />
     </Document>
   );
 }

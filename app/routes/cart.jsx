@@ -1,3 +1,4 @@
+import { useOutletContext } from "@remix-run/react";
 import styles from "~/styles/cart.css";
 
 export function meta() {
@@ -17,6 +18,8 @@ export function links() {
 }
 
 const Cart = () => {
+  const { cart } = useOutletContext();
+
   return (
     <main className="container">
       <h1 className="heading">Shopping Cart</h1>
@@ -24,6 +27,28 @@ const Cart = () => {
       <div className="content">
         <div className="cart">
           <h2>Items</h2>
+
+          {cart.length === 0
+            ? "Empty cart"
+            : cart.map((product) => (
+                <div key={product.id} className="product">
+                  <div>
+                    <img src={product.image} alt={`product ${product.name}`} />
+                  </div>
+
+                  <div>
+                    <p className="name">{product.name}</p>
+
+                    <p className="price">
+                      $ <span>{product.price}</span>
+                    </p>
+                    <p className="subtotal">
+                      Subtotal: ${" "}
+                      <span>{product.price * product.quantity}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
         </div>
 
         <aside className="summary">
