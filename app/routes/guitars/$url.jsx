@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useLoaderData } from "@remix-run/react";
 import { getGuitar } from "~/models/guitars.server";
 
@@ -27,6 +28,7 @@ export function meta({ data }) {
 }
 
 const Guitar = () => {
+  const [quantity, setQuantity] = useState(0);
   const guitar = useLoaderData();
 
   const { name, description, image, price } = guitar.data[0].attributes;
@@ -47,7 +49,7 @@ const Guitar = () => {
         <form className="form">
           <label htmlFor="quantity">Quantity</label>
 
-          <select id="quantity">
+          <select id="quantity" onChange={(e) => setQuantity(+e.target.value)}>
             <option value="">-- Select --</option>
             <option value="1">1</option>
             <option value="2">2</option>
