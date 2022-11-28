@@ -33,7 +33,6 @@
   width: 100%;
   padding: 0.5rem;
   border-radius: 1rem;
-  margin-bottom: 1rem;
 }
 
 .product p {
@@ -51,6 +50,7 @@
 }
 
 .product .price {
+  margin-top: 2rem;
   font-weight: 700;
   color: var(--primary);
 }

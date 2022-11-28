@@ -18,7 +18,7 @@ export function links() {
 }
 
 const Cart = () => {
-  const { cart } = useOutletContext();
+  const { cart, updateQuantity } = useOutletContext();
 
   return (
     <main className="container">
@@ -43,6 +43,12 @@ const Cart = () => {
                     <select
                       value={product.quantity}
                       className="select-quantity"
+                      onChange={(e) =>
+                        updateQuantity({
+                          id: product.id,
+                          quantity: +e.target.value,
+                        })
+                      }
                     >
                       <option value="0">-- Select --</option>
                       <option value="1">1</option>
