@@ -50,7 +50,21 @@ export default function App() {
   const [cart, setCart] = useState([]);
 
   const addCart = (guitar) => {
-    setCart([...cart, guitar]);
+    if (cart.some((guitarState) => guitarState.id === guitar.id)) {
+      // Iterar sobre el arreglo, e identificar el elemento duplicado
+      const updatedCart = cart.map((guitarState) => {
+        if (guitarState.id === guitar.id) {
+          // Reescribir la cantidad
+          guitarState.quantity = guitar.quantity;
+        }
+        return guitarState;
+      });
+      // Añadir al carrito
+      setCart(updatedCart);
+    } else {
+      // Registro nuevo, agregar al carrito
+      setCart([...cart, guitar]);
+    }
   };
 
   return (
